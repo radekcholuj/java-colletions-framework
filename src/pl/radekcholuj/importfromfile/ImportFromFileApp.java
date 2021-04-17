@@ -7,7 +7,7 @@ import java.util.Set;
 public class ImportFromFileApp {
     public static void main(String[] args) {
         File file = new File();
-        Set<Person> people = new HashSet<>(Arrays.asList(file.getPeople()););
+        Set<Person> people = new HashSet<>(Arrays.asList(file.getPeople()));
         System.out.println(people);
     }
 }
