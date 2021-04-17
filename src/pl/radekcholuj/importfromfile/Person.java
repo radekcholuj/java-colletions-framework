@@ -19,7 +19,7 @@ public class Person {
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", pesel='" + pesel + '\'' +
-                '}'+ "\n";
+                '}' + "\n";
     }
 
     @Override
