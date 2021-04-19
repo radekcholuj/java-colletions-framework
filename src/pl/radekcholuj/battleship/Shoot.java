@@ -14,7 +14,10 @@ public class Shoot {
 
     @Override
     public String toString() {
-        return "|" + x + y + "|";
+        return "Shoot{" +
+                "x='" + x + '\'' +
+                ", y='" + y + '\'' +
+                '}';
     }
 
     @Override
