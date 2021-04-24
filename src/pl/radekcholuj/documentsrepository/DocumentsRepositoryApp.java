@@ -1,5 +1,6 @@
 package pl.radekcholuj.documentsrepository;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class DocumentsRepositoryApp {
@@ -17,11 +18,17 @@ public class DocumentsRepositoryApp {
                 case 2:
                     System.out.println(getDocumentById());
                     break;
+                case 22:
+                    System.out.println(getDocuments());
+                    break;
                 case 3:
                     updateDocument();
                     break;
                 case 4:
                     deleteDocument();
+                    break;
+                case 5:
+                    containsDocument();
                     break;
             }
         } while (option != -1);
@@ -46,7 +53,24 @@ public class DocumentsRepositoryApp {
                 break;
         }
     }
-    
+    private static List<Document> getDocuments() {
+        return documentRepository.getAll();
+    }
+
+    private static void containsDocument() {
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+
+        Document document = new Document(name);
+        boolean exists = documentRepository.contains(document);
+
+        if(exists){
+            System.out.println("Exists");
+        } else {
+            System.out.println("Not exists.");
+        }
+    }
+
     private static void deleteDocument() {
         System.out.print("ID: ");
         int id = scanner.nextInt();
@@ -86,8 +110,10 @@ public class DocumentsRepositoryApp {
         System.out.println("-------- Documents Repository -------");
         System.out.println("1 - add");
         System.out.println("2 - get");
+        System.out.println("22 - getAll");
         System.out.println("3 - update");
         System.out.println("4 - delete");
+        System.out.println("5 - contains");
         System.out.println("-1 - stop");
         int option = scanner.nextInt();
         scanner.nextLine(); // przechwycenie nowej lini
