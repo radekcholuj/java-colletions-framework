@@ -21,7 +21,7 @@ public class DocumentsRepositoryApp {
                     updateDocument();
                     break;
                 case 4:
-                    System.out.println("delete");
+                    deleteDocument();
                     break;
             }
         } while (option != -1);
@@ -45,6 +45,13 @@ public class DocumentsRepositoryApp {
                 document.setContent(content);
                 break;
         }
+    }
+    
+    private static void deleteDocument() {
+        System.out.print("ID: ");
+        int id = scanner.nextInt();
+
+        documentRepository.removeById(id);
     }
 
     private static int updateDocumentMenu() {
