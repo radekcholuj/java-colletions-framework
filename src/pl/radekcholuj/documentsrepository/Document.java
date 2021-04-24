@@ -9,6 +9,14 @@ public class Document {
         this.content = content;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     @Override
     public String toString() {
         return "Document{" +

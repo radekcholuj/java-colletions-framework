@@ -15,10 +15,10 @@ public class DocumentsRepositoryApp {
                     addDocument();
                     break;
                 case 2:
-                    getDocumentById();
+                    System.out.println(getDocumentById());
                     break;
                 case 3:
-                    System.out.println("update");
+                    updateDocument();
                     break;
                 case 4:
                     System.out.println("delete");
@@ -29,11 +29,39 @@ public class DocumentsRepositoryApp {
         scanner.close();
     }
 
-    private static void getDocumentById() {
+    private static void updateDocument() {
+        Document document = getDocumentById();
+        System.out.println(document);
+        int option = updateDocumentMenu();
+        switch (option) {
+            case 1:
+                System.out.print("Name: ");
+                String name = scanner.nextLine();
+                document.setName(name);
+                break;
+            case 2:
+                System.out.print("Content: ");
+                String content = scanner.nextLine();
+                document.setContent(content);
+                break;
+        }
+    }
+
+    private static int updateDocumentMenu() {
+        System.out.println("1 - edit name");
+        System.out.println("2 - edit content");
+        int option = scanner.nextInt();
+        scanner.nextLine(); // new line
+
+        return option;
+    }
+
+    private static Document getDocumentById() {
         System.out.print("ID: ");
         int id = scanner.nextInt();
 
         System.out.println(documentRepository.getById(id));
+        return documentRepository.getById(id);
     }
 
     private static void addDocument() {
