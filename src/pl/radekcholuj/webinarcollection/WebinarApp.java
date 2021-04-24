@@ -7,7 +7,7 @@ public class WebinarApp {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        TreeSet<Webinar> webinars = new TreeSet<>();
+        TreeSet<Webinar> webinars = new TreeSet<>(new WebinarComparator());
 
         int option;
         do {
