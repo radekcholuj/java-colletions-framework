@@ -10,11 +10,20 @@ public class Company {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     @Override
     public String toString() {
-        return "Company{" +
-                "companyName='" + companyName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+        return "Company name: " + companyName + "\n" + "Phone number: " + phoneNumber +"\n";
     }
 }
